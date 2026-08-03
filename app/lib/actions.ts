@@ -5,7 +5,7 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import postgres from 'postgres';
 
-const sql = postgres(process.env.DATABASE_URL!, { ssl: 'require' });
+const sql = postgres(process.env.ACME_ENVIRONMENT_DATABASE_URL!, { ssl: 'require' });
 
 const FormSchema = z.object({
     id: z.string(),
