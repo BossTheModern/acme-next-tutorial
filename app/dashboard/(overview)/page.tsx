@@ -6,6 +6,8 @@ import { Suspense } from 'react';
 import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
 import CardWrapper from '@/app/ui/dashboard/cards';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Page() {
     // Data fetching using waterfall pattern
     // const revenue = await fetchRevenue();
