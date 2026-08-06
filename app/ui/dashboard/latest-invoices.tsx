@@ -5,8 +5,6 @@ import { lusitana } from '@/app/ui/fonts';
 import { LatestInvoice } from '@/app/lib/definitions';
 import { fetchLatestInvoices } from '@/app/lib/data';
 
-export const dynamic = 'force-dynamic';
-
 export default async function LatestInvoices() {
   const latestInvoices: LatestInvoice[] = await fetchLatestInvoices();
 
