@@ -148,8 +148,6 @@ export async function fetchCustomersPages() {
       SELECT COUNT(DISTINCT customers.id) FROM customers
     `;
 
-    console.log('Fetched customers:', data[0].count);
-
     const totalPages = Math.ceil(Number(data[0].count) / ITEMS_PER_PAGE);
     return totalPages;
   } catch (error) {
