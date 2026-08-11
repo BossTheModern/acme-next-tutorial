@@ -142,6 +142,22 @@ export async function fetchInvoicesPages(query: string) {
   }
 }
 
+export async function fetchCustomersPages() {
+  try {
+    const data = await sql`
+      SELECT COUNT(DISTINCT customers.id) FROM customers
+    `;
+
+    console.log('Fetched customers:', data[0].count);
+
+    const totalPages = Math.ceil(Number(data[0].count) / ITEMS_PER_PAGE);
+    return totalPages;
+  } catch (error) {
+    console.error('Database error');
+    throw new Error('Failed to fetch total number of customers');
+  }
+}
+
 export async function fetchInvoiceById(id: string) {
   try {
     const data = await sql<InvoiceForm[]>`
